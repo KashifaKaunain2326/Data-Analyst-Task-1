@@ -78,9 +78,14 @@ Source: Kaggle
 
 📈 Outcome
 
+
 Successfully performed data cleaning and preprocessing to improve dataset quality, consistency, and accuracy.
 
 The cleaned dataset is now ready for further data analysis and visualization.
+Sample Output:
+<img width="723" height="1280" alt="image" src="https://github.com/user-attachments/assets/1ba9ea40-dfef-4671-b814-c6aa40da3733" />
+
+
 
 Conclusion
 
