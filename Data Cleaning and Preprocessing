@@ -1,0 +1,42 @@
+import pandas as pd
+
+# Create sample dataset
+data = {
+    "Name": ["Ali", "Sara", "John", "Ali", None],
+    "Age": [22, 25, None, 22, 30],
+    "City": ["Hyderabad", "karimnagar", "Delhi", "Hyderabad", "Mumbai"],
+    "Salary": [20000, 30000, 25000, 20000, None]
+}
+
+df = pd.DataFrame(data)
+
+print("Original Dataset:")
+print(df)
+
+# Check missing values
+print("\nMissing Values:")
+print(df.isnull().sum())
+
+# Handle missing values
+df["Name"] = df["Name"].fillna("Unknown")
+df["Age"] = df["Age"].fillna(df["Age"].median())
+df["Salary"] = df["Salary"].fillna(df["Salary"].median())
+
+# Remove duplicates
+df = df.drop_duplicates()
+
+# Standardize text
+df["Name"] = df["Name"].str.strip().str.title()
+df["City"] = df["City"].str.strip().str.title()
+
+# Rename columns
+df.columns = df.columns.str.lower()
+
+# Save cleaned dataset
+df.to_csv("cleaned_dataset.csv", index=False)
+
+print("\nCleaned Dataset:")
+print(df)
+
+print("\nData Cleaning Completed Successfully!")
+print("Cleaned file saved successfully.")
